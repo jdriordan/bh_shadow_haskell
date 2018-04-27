@@ -1,0 +1,53 @@
+name:                shadow
+version:             0.1.0.0
+github:              "jdriordan/bh_shadow_haskell"
+license:             GPLv3
+author:              "Danny Riordan"
+maintainer:          "dannyriordan@gmail.com"
+copyright:           "GPLv3"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            category
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/jdriordan/bh_shadow_haskell#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- accelerate
+- accelerate-io
+- accelerate-blas
+- accelerate-llvm-native
+# accelerate-llvm-ptx
+
+library:
+  source-dirs: src
+
+executables:
+  shadow-exe:
+    main:                Main.hs
+    source-dirs:         src
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-n2M
+    - -with-rtsopts=-A64M
+    dependencies:
+    - shadow
+
+tests:
+  shadow-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - shadow

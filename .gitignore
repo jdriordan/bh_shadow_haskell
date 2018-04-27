@@ -7,3 +7,4 @@ bh_shadow_run.prof*
 *.png
 bin/
 obj/
+.stack-work

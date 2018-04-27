@@ -1,7 +1,7 @@
 import System.IO
 import Config (camera)
 import BH_Shadow (calculate_shadow)
-import Type_Defs (vec2_to_string, Vec2)
+import Type_Defs (Vec2)
 
 main :: IO()
 main = do

@@ -8,8 +8,6 @@ module Config
 , integrator
 , step_epsilon
 , nmax
-, do_parallel
-, chunk_size
 ) where
 
 import Type_Defs (Coords(..), Integrator(..))
@@ -66,12 +64,3 @@ step_epsilon = 0.01
 -- Max number of steps before photon considered stuck
 nmax = 100000 :: Int
 
---------------------------------------------------------------------------------
-
--- Run code in parallel 
-do_parallel = True
-
--- Divide tasks into chunks
-chunk_size = 128 :: Int
-
---------------------------------------------------------------------------------
